@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" ng-app>
+<html lang="es" ng-app="gameshop">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/gs-theme.css">
 </head>
@@ -39,28 +40,30 @@
 				<ul class="nav navbar-nav gs-navbar-nav">
 					<li><a href="index.html" class="active"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home<span class="sr-only">(actual)</span></a></li>
 					<li><a href="nosotros.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Nosotros</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Productos</a></li>
+					<li><a href="#"><span class="ion-ios-game-controller-a" aria-hidden="true"></span>Productos</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contacto</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav><!--/nav-->
-	<div id="carousel-example-generic" class="carousel slide gs-carousel clearfix" data-ride="carousel">
+	<div ng-controller="CarouselController as carouselCtrl" id="carousel-example-generic" class="carousel slide gs-carousel clearfix" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li ng-repeat="slide in carouselCtrl.slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{'active': $first}"></li>
+			<!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
 		</ol>
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-			  <img src="assets/img/carousel_1.jpg" alt="...">
+			<div ng-repeat="slide in carouselCtrl.slides" ng-class="{'item active': $first, 'item': !$first}">
+			  <img ng-src="{{slide.img}}" alt="...">
 			  <div class="carousel-caption">
-				<h2>BATTLEFIELD</h2>
+				<h2>{{slide.title}}</h2>
 			  </div>
 			</div>
+			<!--
 			<div class="item">
 			  <img src="assets/img/carousel_2.jpg" alt="...">
 			  <div class="carousel-caption">
@@ -73,6 +76,7 @@
 				<h2>DEAD RISING</h2>
 			  </div>
 			</div>
+		-->
 		</div>
 
 		<!-- Controls -->
@@ -87,17 +91,23 @@
 	</div><!--/carousel-->
 	<div class="row section-container clearfix" id="content-container">
 		<div class="container">
-			<aside class="col-xs-12 col-sm-12 col-md-2 col-lg-2" id="sidebar">
+			<aside ng-controller="CategoriesController as categoriesCtrl" class="col-xs-12 col-sm-12 col-md-2 col-lg-2" id="sidebar">
 				<ul id="categorias-productos" class="nav nav-pills nav-stacked" >
-					<li><a href="#" >Juegos</a></li>
-					<li><a href="#" >Consolas</a></li>
+					<li ng-repeat="category in categoriesCtrl.categories" ><a href="categoria/{{category.name}}" >{{category.name}}</a></li>
+					<!--<li><a href="#" >Consolas</a></li>
 					<li><a href="#" >Accesorios</a></li>
-					<li><a href="#" >Figuras de acción</a></li>
+					<li><a href="#" >Figuras de acción</a></li>-->
 				</ul>
 			</aside>
-			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
+			<div ng-controller="IndexController as indexCtrl" class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
 				<h2 class="title">Los más vendidos</h2>
 				<ul id="lo-mas-vendido" class="list-inline clearfix">
+					<li  ng-repeat="bestSeller in indexCtrl.bestSellers" class=""><a href="producto/{{bestSeller.id}}"><img ng-src="{{bestSeller.thumb}}" /></a>
+						<div class="item-hover text-center">
+							<button type="" class="btn btn-primary btn-sm">Ver más</button>
+						</div>
+					</li>					
+					<!--
 					<li class=""><a href="#"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg" /></a>
 						<div class="item-hover text-center">
 							<button type="" class="btn btn-primary btn-sm">Ver más</button>
@@ -138,9 +148,16 @@
 							<button type="" class="btn btn-primary btn-sm">Ver más</button>
 						</div>
 					</li>
+									-->
 				</ul>
 				<h2 class="title">Recomendados para vos</h2>
 				<ul id="recomendados" class="list-inline clearfix">
+					<li ng-repeat="recommended in indexCtrl.recommendations" ><a href="producto/{{recommended.id}}"><img ng-src="{{recommended.thumb}}" /></a>
+						<div class="item-hover text-center">
+							<button type="" class="btn btn-primary btn-sm">Ver más</button>
+						</div>
+					</li>
+					<!--
 					<li><a href="#"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4plants.jpg" /></a>
 						<div class="item-hover text-center">
 							<button type="" class="btn btn-primary btn-sm">Ver más</button>
@@ -161,6 +178,7 @@
 							<button type="" class="btn btn-primary btn-sm">Ver más</button>
 						</div>
 					</li>
+				-->
 				</ul>
 			</div> <!--/content-->
 		</div>
@@ -195,8 +213,9 @@
 		Gameshop 2014
 		</div>
 	</footer>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>
