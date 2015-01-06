@@ -40,9 +40,15 @@ footer {
   font-size: 16px;
   text-shadow: inherit;
   border-bottom: 5px solid transparent;
+  -webkit-transition: opacity .7s;
+  -moz-transition: opacity .7s;
+   -ms-transition: opacity .7s;
+   -o-transition: opacity .7s;
+  transition: opacity .7s;
 }
 .navbar-nav.gs-navbar-nav > li > a:hover{
   border-bottom: 5px solid #fd4f08;
+  opacity: .7;
 }
 .navbar-nav.gs-navbar-nav > li > a.active{
   border-bottom: 5px solid #fd4f08;
@@ -91,9 +97,22 @@ footer {
   color: #fd4f08;
 }
 
+/*Icons*/
+h2.title .icon{margin-right: 10px; color: #fc7739;}  
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-32 { font-size: 32px; }
+.size-48 { font-size: 48px; }
+.size-64 { font-size: 64px; }
+.size-96 { font-size: 96px; }
+
 /*Content*/
 .section-container {
-  background: #333;
+  background: #444;
   padding:30px 0;
 }
 #content{
@@ -104,7 +123,7 @@ footer {
   margin: 0 0 30px;
   font-weight: 300;
   padding: 3px 3px 10px 3px;
-  border-bottom: 3px solid #fd4f08;
+  border-bottom: 3px solid #666666;
 }
 ul#lo-mas-vendido {
   margin-bottom: 50px;
@@ -138,6 +157,7 @@ ul#lo-mas-vendido > li:hover .item-hover, ul#recomendados > li:hover .item-hover
   background-color: #fd4f08;
 }
 
+/*Contact Form*/
 #form-container {
   background: #fc7739;
 }
@@ -167,11 +187,14 @@ ul#lo-mas-vendido > li:hover .item-hover, ul#recomendados > li:hover .item-hover
   background-color: #000;
 }
 
+/*Social*/
 #social-container{
   text-align: center;
   background: url("../img/mario.png") no-repeat 50% 30% #333;
   background-size: 10%;
 }
+
+
 @media (min-width: 768px){
     .navbar-nav{
         float:none;

@@ -17,7 +17,7 @@ ul#lo-mas-vendido > li, ul#recomendados > li {
 }
 
 #sitename #name {
-	font-size: 3em;
+	font-size: 2em;
 }
 
 #sitename #slogan {
@@ -67,6 +67,6 @@ ul#lo-mas-vendido > li, ul#recomendados > li {
   }
 }
 
-#content {
-	color: wheat;
+#content p {
+	color: #eee;
 }

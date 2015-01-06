@@ -6,8 +6,8 @@
 	<title>Gameshop</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300'>
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/gs-theme.css">
 </head>
@@ -20,7 +20,7 @@
 			<div id="sitename" class="col-xs-offset-3 col-sm-offset-3 col-md-offset-0 col-md-6">
 				<div class="row vertical-center">
 					<div class="col-md-offset-3 col-md-6" >
-						<div id="name">GAME<span class="red">SHOP</span></div><div id="slogan" class="text-center">Somos jugadores</div>
+						<div id="name" class="text-center">GAME<span class="red">SHOP</span></div><div id="slogan" class="text-center">Somos jugadores</div>
 					</div>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav gs-navbar-nav">
-					<li><a href="index.html" class="active"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home<span class="sr-only">(actual)</span></a></li>
-					<li><a href="nosotros.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Nosotros</a></li>
-					<li><a href="#"><span class="ion-ios-game-controller-a" aria-hidden="true"></span>Productos</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Contacto</a></li>
+					<li><a href="index.html" class="active"><span class="icon-size size-21"><i class="icon ion-home"></i></span>Home<span class="sr-only">(actual)</span></a></li>
+					<li><a href="nosotros.html"><span class="icon-size size-21"><i class="icon ion-android-person"></i></span>Nosotros</a></li>
+					<li><a href="#"><span class="icon-size size-21"><i class="icon ion-ios-game-controller-b"></i></span>Productos</a></li>
+					<li><a href="#"><span class="icon-size size-21"><i class="icon ion-android-mail"></i></span>Contacto</a></li>
 				</ul>
 			</div>
 		</div>
@@ -100,7 +100,7 @@
 				</ul>
 			</aside>
 			<div ng-controller="IndexController as indexCtrl" class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
-				<h2 class="title">Los más vendidos</h2>
+				<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-star-outline"></i></span>Los más vendidos</h2>
 				<ul id="lo-mas-vendido" class="list-inline clearfix">
 					<li  ng-repeat="bestSeller in indexCtrl.bestSellers" class=""><a href="producto/{{bestSeller.id}}"><img ng-src="{{bestSeller.thumb}}" /></a>
 						<div class="item-hover text-center">
@@ -150,7 +150,7 @@
 					</li>
 									-->
 				</ul>
-				<h2 class="title">Recomendados para vos</h2>
+				<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-happy"></i></span>Recomendados para vos</h2>
 				<ul id="recomendados" class="list-inline clearfix">
 					<li ng-repeat="recommended in indexCtrl.recommendations" ><a href="producto/{{recommended.id}}"><img ng-src="{{recommended.thumb}}" /></a>
 						<div class="item-hover text-center">
