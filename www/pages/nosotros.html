@@ -18,7 +18,12 @@
 				Sabemos que para todo problema existe una solución, y esa solución es la satisfacción de los players 1 que son nuestros jugadores, nuestros colegas.
 			</p>
 			<h2 class="title"><span class="icon-size size-24"><i class="icon ion-android-pin"></i></span>¿Dónde estamos?</h2>
-			<div id="map-canvas" style="height:30em"></div>
+
+			<ui-gmap-google-map center='map.center' zoom='map.zoom' options='map.options'>
+				<ui-gmap-marker idKey='marker.id' coords='marker.coords' options='marker.options'>
+				</ui-gmap-marker>
+			</ui-gmap-google-map>
+			
 		</div> <!--/content-->
 	</div>
 </div> <!--/content-container-->

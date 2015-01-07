@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('gameshop', ['ui.router']);
+	var app = angular.module('gameshop', ['ui.router', 'uiGmapgoogle-maps']);
 
 	app.config(function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise("/");
@@ -10,9 +10,24 @@
 			})
 			.state('nosotros', {
 				url: "/nosotros",
-				templateUrl: "pages/nosotros.html"
+				templateUrl: "pages/nosotros.html",
+				controller: "MapController as mapCtrl"
 			});
 	});
+
+	app.controller('MapController', ['$scope', function($scope, uiGmapGoogleMapApi) {
+		$scope.map = { center: { latitude: -32.950270, longitude: -60.645720}, 
+					   zoom: 15,
+					   options: {
+					   	    disableDefaultUI: true,
+    						mapTypeId: google.maps.MapTypeId.ROADMAP
+					   }};
+		$scope.marker = {
+			id : 1,
+			coords : { latitude: -32.950270, longitude: -60.645720},
+			options: { title: 'GAMESHOP'}
+		}
+	}]);
 
 	app.controller('IndexController', function() {
 		this.bestSellers = bestSellers;
