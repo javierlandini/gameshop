@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" ng-app>
+<html lang="es" ng-app="gameshop">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,14 +49,9 @@
 
 	<div class="row section-container clearfix" id="content-container">
 		<div class="container">
-			<aside class="col-xs-12 col-sm-12 col-md-2 col-lg-2" id="sidebar">
-				<ul id="categorias-productos" class="nav nav-pills nav-stacked" >
-					<li><a href="#" >Juegos</a></li>
-					<li><a href="#" >Consolas</a></li>
-					<li><a href="#" >Accesorios</a></li>
-					<li><a href="#" >Figuras de acción</a></li>
-				</ul>
-			</aside>
+
+			<category-menu></category-menu>
+
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
 				<h2 class="title"><span class="icon-size size-24"><i class="icon icon ion-android-person"></i></span>¿Quiénes somos?</h2>
 				<p>
@@ -76,6 +71,7 @@
 			</div> <!--/content-->
 		</div>
 	</div> <!--/content-container-->
+	
 	<div class="row section-container clearfix" id="form-container">
 		<div class="container">
 			<form class="col-lg-offset-3 col-lg-6" role="form">
@@ -94,7 +90,7 @@
 	<div class="row section-container clearfix" id="social-container">
 		<div class="container">
 			<form class="col-lg-offset-3 col-lg-6">
-				<a href="https://www.facebook.com/dialog/share?app_id=647227598647705&amp;display=popup&amp;href=http%3A%2F%2Fquilmo.com%2F&amp;redirect_uri=http%3A%2F%2Fquilmo.com" target="_blank">
+				<a href="https://www.facebook.com/pages/GameShop/336794739846401?fref=ts" target="_blank">
                     <!--<img src="assets/img/share-on-fb.svg">-->
                     Seguinos en <strong>Facebook</strong>
                 </a>
@@ -109,6 +105,7 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
 	<script src="assets/js/maps.js"></script>
 </body>
 </html>

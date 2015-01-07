@@ -1,14 +1,37 @@
 (function() {
-	var app = angular.module('gameshop', []);
+	var app = angular.module('gameshop', ['ui.router']);
+
+	app.config(function($stateProvider, $urlRouterProvider) {
+		$urlRouterProvider.otherwise("/");
+		$stateProvider
+			.state('home', {
+				url: '/',
+				templateUrl: 'pages/home.html'
+			})
+			.state('nosotros', {
+				url: "/nosotros",
+				templateUrl: "pages/nosotros.html"
+			});
+	});
+
 	app.controller('IndexController', function() {
 		this.bestSellers = bestSellers;
 		this.recommendations = recommendations;
 	});
-	app.controller('CategoriesController', function() {
-		this.categories = categories;
-	});
+
 	app.controller('CarouselController', function() {
 		this.slides = slides;
+	});
+
+	app.directive('categoryMenu', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'directive_templates/category-menu.html',
+			controller: function(){
+				this.categories = categories;		
+			},
+			controllerAs: 'categoriesCtrl'
+		};
 	});
 
 	var bestSellers = [
