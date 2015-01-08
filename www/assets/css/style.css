@@ -71,4 +71,6 @@ ul#lo-mas-vendido > li, ul#recomendados > li {
 	color: #eee;
 }
 
-.angular-google-map-container { height: 30em; }
+.angular-google-map-container { 
+	height: 30em; 
+}

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gameshop</title>
+	<title>Productos</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300'>
@@ -38,22 +38,64 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav gs-navbar-nav">
-					<li><a ui-sref="home" ui-sref-active="active"><span class="icon-size size-21"><i class="icon ion-home"></i></span>Home<span class="sr-only">(actual)</span></a></li>
-					<li><a ui-sref="nosotros" ui-sref-active="active"><span class="icon-size size-21"><i class="icon ion-android-person"></i></span>Nosotros</a></li>
-					<li><a href="productos.html"><span class="icon-size size-21"><i class="icon ion-ios-game-controller-b"></i></span>Productos</a></li>
+					<li><a href="index.html"><span class="icon-size size-21"><i class="icon ion-home"></i></span>Home<span class="sr-only">(actual)</span></a></li>
+					<li><a href="nosotros.html"><span class="icon-size size-21"><i class="icon ion-android-person"></i></span>Nosotros</a></li>
+					<li><a href="productos.html" class="active"><span class="icon-size size-21"><i class="icon ion-ios-game-controller-b"></i></span>Productos</a></li>
 					<li><a href="#"><span class="icon-size size-21"><i class="icon ion-android-mail"></i></span>Contacto</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav><!--/nav-->
-
-	<div id="main">
-		<div ui-view autoscroll="false"></div>
-	</div>
-
-
-
-
+	<div class="row section-container clearfix" id="content-container">
+		<div class="container">
+			<category-menu></category-menu>
+			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
+				<h2 class="title"><span class="icon-size size-28"><i class="icon icon ion-ios-game-controller-b"></i></span>Nuestros Productos</h2>
+				<ul id="nuestros-productos" class="product-list list-inline clearfix">
+					<li class="mas-vendidos"><a href="#"><i class="icon ion-android-star"></i><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class=""><a href="productos-detalle.html"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="productos-detalle.html" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class=""><a href="#"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonebatknight.jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class="mas-vendidos"><a href="#"><i class="icon ion-android-star"></i><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/legomarvelps4(21_01_2014).jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class=""><a href="#"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/fifa14(21_01_2014).jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class="recomendados"><a href="#"><i class="icon ion-android-happy"></i><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/injusticeps4(21_01_2014).jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class=""><a href="#"><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4nba2k15.jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+					<li class="mas-vendidos"><a href="#"><i class="icon ion-android-star"></i><img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/nfsrivalps4(21_01_2014).jpg" /></a>
+						<div class="item-hover text-center">
+							<a href="#" class="btn btn-primary btn-sm">Ver más</a>
+						</div>
+					</li>
+				</ul>
+			</div> <!--/content-->
+		</div>
+	</div> <!--/content-container-->
 	<div class="row section-container clearfix" id="form-container">
 		<div class="container">
 			<form class="col-lg-offset-3 col-lg-6" role="form">
@@ -72,7 +114,8 @@
 	<div class="row section-container clearfix" id="social-container">
 		<div class="container">
 			<form class="col-lg-offset-3 col-lg-6">
-				<a href="https://www.facebook.com/pages/GameShop/336794739846401?fref=ts" target="_blank">
+				<a href="https://www.facebook.com/dialog/share?app_id=647227598647705&amp;display=popup&amp;href=http%3A%2F%2Fquilmo.com%2F&amp;redirect_uri=http%3A%2F%2Fquilmo.com" target="_blank">
+                    <!--<img src="assets/img/share-on-fb.svg">-->
                     Seguinos en <strong>Facebook</strong>
                 </a>
 			</form>
