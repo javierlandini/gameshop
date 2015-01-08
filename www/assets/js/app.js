@@ -12,6 +12,34 @@
 				url: "/nosotros",
 				templateUrl: "pages/nosotros.html",
 				controller: "MapController as mapCtrl"
+			})
+			.state('productos', {
+				abstract: true,
+				templateUrl: "pages/productos.html"
+			})
+			.state('productos.productos', {
+				url: "/productos",
+				views: {
+					"productos@productos": {
+						templateUrl: "pages/productos-productos.html"
+					}
+				}
+			})
+			.state('productos.productos.categoria', {
+				url: "/juegos",
+				views: {
+					"productos@productos": {
+						templateUrl: "pages/productos-categoria.html"
+					}
+				}
+			})
+			.state('productos.productos.categoria.producto', {
+				url: "/lego-movie-videogame",
+				views: {
+					"productos@productos": {
+						templateUrl: "pages/productos-detalle.html"
+					}
+				}
 			});
 	});
 
