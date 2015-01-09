@@ -26,10 +26,11 @@
 				}
 			})
 			.state('productos.productos.categoria', {
-				url: "/juegos",
+				url: "/:category",
 				views: {
 					"productos@productos": {
-						templateUrl: "pages/productos-categoria.html"
+						templateUrl: "pages/productos-categoria.html",
+						controller: "ProductosCategoriaController as productosCategoriaCtrl"
 					}
 				}
 			})
@@ -43,7 +44,93 @@
 			});
 	});
 
-	app.controller('MapController', ['$scope', function($scope, uiGmapGoogleMapApi) {
+	app.factory('contentdata', function() {
+			var service = {};
+			var categories = [
+			{
+				tid: 1,
+				name: 'Juegos',
+			},
+			{
+				tid: 2,
+				name: 'Consolas',
+			},
+			{
+				tid: 3,
+				name: 'Accesorios',
+			},
+			{
+				tid: 4,
+				name: 'Figuras de acción',
+			}];
+
+			var productos = {
+			1: {
+				nid: 1,
+				tid: 1,
+				title: 'Call of Duty',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+			},
+			2: {
+				nid: 2,
+				tid: 1,
+				title: 'Lego Movie',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg',
+			},
+			3: {
+				nid: 3,
+				tid: 1,
+				title: 'Batman',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonebatknight.jpg',
+			},
+			4: {
+				nid: 4,
+				tid: 1,
+				title: 'Lego Marvel',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/legomarvelps4(21_01_2014).jpg',
+			},
+			5: {
+				nid: 5,
+				tid: 1,
+				title: 'FIFA 14',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/fifa14(21_01_2014).jpg',
+			},
+			6: {
+				nid: 6,
+				tid: 1,
+				title: 'Injustice',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/injusticeps4(21_01_2014).jpg',
+			},
+			7: {
+				nid: 7,
+				tid: 1,
+				title: 'NBA2K15',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4nba2k15.jpg',
+			},
+			8: {
+				nid: 8,
+				tid: 1,
+				title: 'Need for Speed rivals',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/nfsrivalps4(21_01_2014).jpg',
+			}};
+
+			service.getProduct = function getProduct(nid) {
+				return productos[nid];
+			}
+
+			service.getProductsByCategory = function getProductsByCategory(categoryName) {
+				if (categoryName == 'Juegos') {
+					return productos;	
+				}
+				else {
+					return {};
+				}
+			}
+
+			return service;
+	});
+
+	app.controller('MapController', ['$scope', function($scope) {
 		$scope.map = { center: { latitude: -32.950270, longitude: -60.645720}, 
 					   zoom: 15,
 					   options: {
@@ -64,6 +151,11 @@
 
 	app.controller('CarouselController', function() {
 		this.slides = slides;
+	});
+
+	app.controller('ProductosCategoriaController', function($scope, $stateParams, contentdata) {
+		$scope.title = $stateParams.category;
+		$scope.juegos = contentdata.getProductsByCategory($stateParams.category);
 	});
 
 	app.directive('categoryMenu', function() {
@@ -178,5 +270,9 @@
 		title: 'DEAD RISING',
 		img: 'assets/img/carousel_3.jpg',
 	},
+	];
+
+	var productos = [
+
 	];
 })();
