@@ -32,17 +32,17 @@
 		<div ng-controller="IndexController as indexCtrl" class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
 			<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-star-outline"></i></span>Los más vendidos</h2>
 			<ul id="lo-mas-vendido" class="list-inline clearfix">
-				<li  ng-repeat="bestSeller in indexCtrl.bestSellers" class=""><a href="producto/{{bestSeller.id}}"><img ng-src="{{bestSeller.thumb}}" /></a>
+				<li  ng-repeat="bestSeller in bestSellers" class=""><a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.categoryName}}', productUrl: '{{bestSeller.productUrl}}'})"><img ng-src="{{bestSeller.thumb}}" /></a>
 					<div class="item-hover text-center">
-						<button type="" class="btn btn-primary btn-sm">Ver más</button>
+						<a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.categoryName}}', productUrl: '{{bestSeller.productUrl}}'})" class="btn btn-primary btn-sm">Ver más</a>
 					</div>
 				</li>
 			</ul>
 			<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-happy"></i></span>Recomendados para vos</h2>
 			<ul id="recomendados" class="list-inline clearfix">
-				<li ng-repeat="recommended in indexCtrl.recommendations" ><a href="producto/{{recommended.id}}"><img ng-src="{{recommended.thumb}}" /></a>
+				<li ng-repeat="recommended in recommendations" ><a ui-sref="productos.productos.categoria.producto({category: '{{recommended.categoryName}}', productUrl: '{{recommended.productUrl}}'})"><img ng-src="{{recommended.thumb}}" /></a>
 					<div class="item-hover text-center">
-						<button type="" class="btn btn-primary btn-sm">Ver más</button>
+						<a ui-sref="productos.productos.categoria.producto({category: '{{recommended.categoryName}}', productUrl: '{{recommended.productUrl}}'})" class="btn btn-primary btn-sm">Ver más</a>
 					</div>
 				</li>
 			</ul>

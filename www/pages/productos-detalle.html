@@ -13,12 +13,12 @@
 			<div id="detail-content-wrapper">
 				<div id="detail-content" class="clearfix">
 					<div id="detail-content-img">
-						<img src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg" src="http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg"/></a>
-						<i class="icon ion-android-star"></i>
+						<img ng-src="{{producto.thumb}}" /></a>
+						<i class="icon {{producto.icon}}"></i>
 					</div>
 					<div id="detail-content-text" class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
-						<h2 class="title"><span class="icon-size size-28"><i class="icon icon ion-ios-game-controller-b"></i></span>LEGO Movie Videogame</h2>
-						<div class="category badge"><span>Warner Bros. Interactive Entertainment</span></div>
+						<h2 class="title"><span class="icon-size size-28"><i class="icon icon ion-ios-game-controller-b"></i></span>{{producto.title}}</h2>
+						<div class="category badge" ng-hide="!producto.productMake"><span>{{producto.productMake}}</span></div>
 						<div id="detail-content-social">
 							<div class="fb-like" data-href="https://eugeniasouza.com.ar/" data-width="100" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
 								<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Feugeniasouza.com.ar%2F&width=100&layout=standard&action=like&show_faces=true&share=true&height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65%; height:40px;" allowTransparency="true"></iframe>
@@ -26,15 +26,14 @@
 						</div>
 					</div>
 				</div>
-				<div id="detail-gallery">
+				<div id="detail-gallery" ng-hide="!producto.trailer">
 					<div id="detail-video">
-						<iframe width="560" height="315" src="http://www.youtube.com/embed/N6ArFXI6nI0?rel=0" frameborder="0" allowfullscreen></iframe>
+						<iframe width="560" height="315" ng-src="{{producto.trailer | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div id="detail-description">
 					<h4>Descripción</h4>
-					<p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p>
-					<p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p>
+					<div ng-bind-html="producto.description"></div>
 				</div>
 			</div>
 		</div> <!--/content-->

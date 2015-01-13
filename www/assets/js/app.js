@@ -1,5 +1,6 @@
 (function() {
-	var app = angular.module('gameshop', ['ui.router', 'uiGmapgoogle-maps']);
+	//ngSanitize needed for using ng-bind-html
+	var app = angular.module('gameshop', ['ngSanitize', 'ui.router', 'uiGmapgoogle-maps']);
 
 	app.config(function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise("/");
@@ -21,7 +22,8 @@
 				url: "/productos",
 				views: {
 					"productos@productos": {
-						templateUrl: "pages/productos-productos.html"
+						templateUrl: "pages/productos-productos.html",
+						controller: "ProductosController as productosCtrl"
 					}
 				}
 			})
@@ -35,10 +37,11 @@
 				}
 			})
 			.state('productos.productos.categoria.producto', {
-				url: "/lego-movie-videogame",
+				url: "/:productUrl",
 				views: {
 					"productos@productos": {
-						templateUrl: "pages/productos-detalle.html"
+						templateUrl: "pages/productos-detalle.html",
+						controller: "ProductosProductoController as productoCtrl"
 					}
 				}
 			});
@@ -65,66 +68,160 @@
 			}];
 
 			var productos = {
-			1: {
+			'call-of-duty': {
 				nid: 1,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: 'mas-vendidos',
+				icon: 'ion-android-star',
+				productMake: '',
+				trailer: '',
+				productUrl: 'call-of-duty',
 				title: 'Call of Duty',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
 			},
-			2: {
+			'lego-movie-videogame': {
 				nid: 2,
 				tid: 1,
-				title: 'Lego Movie',
+				categoryName: 'Juegos',
+				class: '',
+				icon: '',
+				productMake: 'Warner Bros. Interactive Entertainment',
+				trailer: 'http://www.youtube.com/embed/N6ArFXI6nI0?rel=0',
+				productUrl: 'lego-movie-videogame',
+				title: 'Lego Movie Videogame',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg',
+				description: '<p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p><p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p>'
 			},
-			3: {
+			'batman': {
 				nid: 3,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'batman',
 				title: 'Batman',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonebatknight.jpg',
+				description: ''
 			},
-			4: {
+			'lego-marvel': {
 				nid: 4,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: 'mas-vendidos',
+				icon: 'ion-android-star',
+				productMake: '',
+				trailer: '',
+				productUrl: 'lego-marvel',
 				title: 'Lego Marvel',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/legomarvelps4(21_01_2014).jpg',
+				description: ''
 			},
-			5: {
+			'fifa-14': {
 				nid: 5,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'fifa-14',
 				title: 'FIFA 14',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/fifa14(21_01_2014).jpg',
+				description: ''
 			},
-			6: {
+			'injustice': {
 				nid: 6,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: 'recomendados',
+				icon: 'ion-android-happy',
+				productMake: '',
+				trailer: '',
+				productUrl: 'injustice',
 				title: 'Injustice',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/injusticeps4(21_01_2014).jpg',
+				description: ''
 			},
-			7: {
+			'nba-2k15': {
 				nid: 7,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'nba-2k15',
 				title: 'NBA2K15',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4nba2k15.jpg',
+				description: ''
 			},
-			8: {
+			'need-for-speed-rivals': {
 				nid: 8,
 				tid: 1,
+				categoryName: 'Juegos',
+				class: 'mas-vendidos',
+				icon: 'ion-android-star',
+				productMake: '',
+				trailer: '',
+				productUrl: 'need-for-speed-rivals',
 				title: 'Need for Speed rivals',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/nfsrivalps4(21_01_2014).jpg',
+				description: ''
 			}};
 
-			service.getProduct = function getProduct(nid) {
-				return productos[nid];
+			service.getProducts = function getProducts() {
+				return productos;
+			}
+
+			service.getProduct = function getProduct(url) {
+				return productos[url];
 			}
 
 			service.getProductsByCategory = function getProductsByCategory(categoryName) {
-				if (categoryName == 'Juegos') {
-					return productos;	
+
+				var ret = [];
+
+				for (var p in productos) {
+					if (productos.hasOwnProperty(p)) {
+						if (productos[p].categoryName == categoryName) {
+							ret.push(productos[p]);
+						}
+					}
 				}
-				else {
-					return {};
+
+				return ret;
+			}
+
+			service.getBestSellers = function getBestSellers() {
+				var ret = [];
+
+				for (var p in productos) {
+					if (productos.hasOwnProperty(p)) {
+						if (productos[p].class == 'mas-vendidos') {
+							ret.push(productos[p]);
+						}
+					}
 				}
+
+				return ret;
+			}
+
+			service.getRecommended = function getRecommended() {
+				var ret = [];
+
+				for (var p in productos) {
+					if (productos.hasOwnProperty(p)) {
+						if (productos[p].class == 'recomendados') {
+							ret.push(productos[p]);
+						}
+					}
+				}
+
+				return ret;
 			}
 
 			return service;
@@ -144,19 +241,27 @@
 		}
 	}]);
 
-	app.controller('IndexController', function() {
-		this.bestSellers = bestSellers;
-		this.recommendations = recommendations;
+	app.controller('IndexController', function($scope, contentdata) {
+		$scope.bestSellers = contentdata.getBestSellers();
+		$scope.recommendations = contentdata.getRecommended();
 	});
 
 	app.controller('CarouselController', function() {
 		this.slides = slides;
 	});
 
+	app.controller('ProductosController', function($scope, contentdata) {
+		$scope.juegos = contentdata.getProducts();
+	});
+
 	app.controller('ProductosCategoriaController', function($scope, $stateParams, contentdata) {
 		$scope.title = $stateParams.category;
 		$scope.juegos = contentdata.getProductsByCategory($stateParams.category);
 	});
+
+	app.controller('ProductosProductoController', function($scope, $stateParams, contentdata) {
+		$scope.producto = contentdata.getProduct($stateParams.productUrl);
+	})
 
 	app.directive('categoryMenu', function() {
 		return {
@@ -168,6 +273,12 @@
 			controllerAs: 'categoriesCtrl'
 		};
 	});
+
+	app.filter('trustAsResourceUrl', ['$sce', function($sce) {
+		return function(val) {
+			return $sce.trustAsResourceUrl(val);
+		}
+	}]);
 
 	var bestSellers = [
 	{
