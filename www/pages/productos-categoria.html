@@ -2,7 +2,7 @@
 	<div class="container">
 		<category-menu></category-menu>
 		<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
-			<h2 class="title"><span class="icon-size size-28"><i class="icon icon ion-ios-game-controller-b"></i></span>{{title}}</h2>
+			<h2 class="title"><span class="icon-size size-28"><i class="icon icon {{category.icon}}"></i></span>{{category.name}}</h2>
 			<ul id="nuestros-productos" class="product-list list-inline clearfix">
 				<li  ng-repeat="juego in juegos" class="{{juego.class}}"><a ui-sref="productos.productos.categoria.producto({productUrl: '{{juego.productUrl}}'})"><i class="icon {{juego.icon}}"></i><img ng-src="{{juego.thumb}}" /></a>
 					<div class="item-hover text-center">

@@ -1,12 +1,12 @@
 <div ng-controller="CarouselController as carouselCtrl" id="carousel-example-generic" class="carousel slide gs-carousel clearfix" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
-		<li ng-repeat="slide in carouselCtrl.slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{'active': $first}"></li>
+		<li ng-repeat="slide in slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{'active': $first}"></li>
 	</ol>
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		<div ng-repeat="slide in carouselCtrl.slides" ng-class="{'item active': $first, 'item': !$first}">
+		<div ng-repeat="slide in slides" ng-class="{'item active': $first, 'item': !$first}">
 		  <img ng-src="{{slide.img}}" alt="...">
 		  <div class="carousel-caption">
 			<h2>{{slide.title}}</h2>
