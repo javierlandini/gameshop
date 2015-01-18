@@ -48,7 +48,8 @@
 	});
 
 	app.controller('MapController', ['$scope', function($scope) {
-		$scope.map = { center: { latitude: -32.950270, longitude: -60.645720}, 
+		var gameshop_coords = { latitude: -32.950539, longitude: -60.644869};
+		$scope.map = { center: gameshop_coords,
 					   zoom: 15,
 					   options: {
 					   	    disableDefaultUI: true,
@@ -56,7 +57,7 @@
 					   }};
 		$scope.marker = {
 			id : 1,
-			coords : { latitude: -32.950270, longitude: -60.645720},
+			coords : gameshop_coords,
 			options: { title: 'GAMESHOP'}
 		}
 	}]);

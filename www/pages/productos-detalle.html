@@ -23,7 +23,9 @@
 				</div>
 				<div id="detail-gallery" ng-hide="!producto.trailer">
 					<div id="detail-video">
-						<iframe width="560" height="315" ng-src="{{producto.trailer | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
+						<div id="video-wrapper">
+							<iframe width="560" height="315" ng-src="{{producto.trailer | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
 				<div id="detail-description">
