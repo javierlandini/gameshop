@@ -59,7 +59,7 @@
 				trailer: '//www.youtube.com/embed/P9fK77eE7fs',
 				productUrl: 'BATTLEFIELD-4',
 				title: 'BATTLEFIELD 4',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: '<p>La famosa saga de acción bélica creada por DICE y EA. El estudio responsable apuesta por reafirmar los pilares de la franquicia, y por seguir ampliándolos con una nueva campaña ambientada en un creíble conflicto con oriente, y por la fuerza de un cooperativo de leyenda. El desarrollo a caballo entre la actual generación y la próxima garantiza un apartado gráfico y tecnológico de infarto.</p><p>Plataforma:PlayStation 3</p><p>También para:PC  Xbox 360  Xbox One  PS4</p><p>Desarrollador:DICE</p><p>Distribuidor:EA</p><p>Género:Acción, Primera persona (FPS) (Bélico)</p><p>Jugadores:1-24 (Competitivo: Sí / Cooperativo: Sí)</p><p>Duración:6-8 horas + Multijugador</p><p>Idioma:Textos: Español, Voces: Español</p><p>Lanzamiento:31 de octubre de 2013 (Pegi: +18)</p>'
 			},
 			'lego-movie-videogame': {
@@ -72,7 +72,7 @@
 				trailer: 'http://www.youtube.com/embed/N6ArFXI6nI0?rel=0',
 				productUrl: 'lego-movie-videogame',
 				title: 'Lego Movie Videogame',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4legomovie.jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: '<p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p><p>Únete a Star-Lord, Rocket, Groot, Gamora y Drax en una aventura totalmente nueva, Marvel Guardianes de la Galaxia: El Arma Universal. ¡Sé parte de la batalla para ayudar a los Guardianes a recuperar las cinco piezas del Arma Universal y evitar que caiga en manos del malvado Ronan el Acusador!</p>'
 			},
 			'batman': {
@@ -85,7 +85,7 @@
 				trailer: '',
 				productUrl: 'batman',
 				title: 'Batman',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonebatknight.jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: ''
 			},
 			'lego-marvel': {
@@ -98,7 +98,7 @@
 				trailer: '',
 				productUrl: 'lego-marvel',
 				title: 'Lego Marvel',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/legomarvelps4(21_01_2014).jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: ''
 			},
 			'fifa-14': {
@@ -111,7 +111,7 @@
 				trailer: '',
 				productUrl: 'fifa-14',
 				title: 'FIFA 14',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/fifa14(21_01_2014).jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: ''
 			},
 			'injustice': {
@@ -124,7 +124,7 @@
 				trailer: '',
 				productUrl: 'injustice',
 				title: 'Injustice',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/injusticeps4(21_01_2014).jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: ''
 			},
 			'nba-2k15': {
@@ -137,7 +137,7 @@
 				trailer: '',
 				productUrl: 'nba-2k15',
 				title: 'NBA2K15',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/ps4nba2k15.jpg',
+				thumb: 'assets/img/juegos/PR-J-Battlefield4.jpg',
 				description: ''
 			},
 			'need-for-speed-rivals': {
@@ -153,8 +153,21 @@
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/nfsrivalps4(21_01_2014).jpg',
 				description: ''
 			},
-			'DIABLO-III-Lord-of-terror': {
+			'Medal-Of-Honor': {
 				nid: 9,
+				tid: 1,
+				categoryName: 'Juegos PlayStation 3',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'Medal-Of-Honor',
+				title: 'Medal Of Honor Warfighter',
+				thumb: 'assets/img/juegos/PR-J-MedalOfHonor.jpg',
+				description: ''
+			},			
+			'DIABLO-III-Lord-of-terror': {
+				nid: 10,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -163,11 +176,11 @@
 				trailer: '',
 				productUrl: 'DIABLO-III-Lord-of-terror',
 				title: 'DIABLO III Lord of terror',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-diablo-3-lord-of-terror.jpg',
 				description: ''
 			},
 			'SAW-III-Jigsaw-Killer': {
-				nid: 10,
+				nid: 11,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -176,11 +189,11 @@
 				trailer: '',
 				productUrl: 'SAW-III-Jigsaw-Killer',
 				title: 'SAW III Jigsaw Killer',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-saw-3-jigsaw-killer.jpg',
 				description: ''
 			},
 			'GOD-OF-WAR-Hades': {
-				nid: 11,
+				nid: 12,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -189,11 +202,11 @@
 				trailer: '',
 				productUrl: 'GOD-OF-WAR-Hades',
 				title: 'GOD OF WAR Hades',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-god-of-war-hades.jpg',
 				description: ''
 			},
 			'The-dream-master-Freddy': {
-				nid: 12,
+				nid: 13,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -202,11 +215,11 @@
 				trailer: '',
 				productUrl: 'The-dream-master-Freddy',
 				title: 'The dream master Freddy',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-the-dream-master-freddy.jpg',
 				description: ''
 			},
 			'World-of-Warcraft': {
-				nid: 13,
+				nid: 14,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -215,11 +228,11 @@
 				trailer: '',
 				productUrl: 'World-of-Warcraft',
 				title: 'World of Warcraft',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-world-of-warcraft.jpg',
 				description: ''
 			},
 			'ASSASSINS-CREED-Haytham-Kenway': {
-				nid: 14,
+				nid: 15,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -228,11 +241,11 @@
 				trailer: '',
 				productUrl: 'ASSASSINS-CREED-Haytham-Kenway',
 				title: 'ASSASSIN´S CREED Haytham Kenway',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-assassins-creed-haytham-kenway.jpg',
 				description: ''
 			},
 			'METAL-GEAR-SOLID-V-GROUND-ZEROES-Solid-Snake': {
-				nid: 15,
+				nid: 16,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -241,11 +254,11 @@
 				trailer: '',
 				productUrl: 'METAL-GEAR-SOLID-V-GROUND-ZEROES-Solid-Snake',
 				title: 'METAL GEAR SOLID V GROUND ZEROES Solid Snake',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: '',
 				description: ''
 			},
 			'BREAKING-BAD-Heisenberg': {
-				nid: 16,
+				nid: 17,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -254,11 +267,11 @@
 				trailer: '',
 				productUrl: 'BREAKING-BAD-Heisenberg',
 				title: 'BREAKING BAD Heisenberg',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: 'assets/img/figuras/PR-F-breaking-bad-heisenberg.jpg',
 				description: ''
 			},
 			'PREDATORS': {
-				nid: 17,
+				nid: 18,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -267,11 +280,11 @@
 				trailer: '',
 				productUrl: 'PREDATORS',
 				title: 'PREDATORS',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: '',
 				description: ''
 			},
 			'DRAGON-BALL-Z-Goku-ssj': {
-				nid: 18,
+				nid: 19,
 				tid: 5,
 				categoryName: 'Figuras de acción',
 				class: '',
@@ -280,7 +293,7 @@
 				trailer: '',
 				productUrl: 'DRAGON-BALL-Z-Goku-ssj',
 				title: 'DRAGON BALL Z Goku ssj',
-				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				thumb: '',
 				description: ''
 			}};
 
