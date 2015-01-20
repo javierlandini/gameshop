@@ -6,21 +6,26 @@
 			var categories = [
 			{
 				tid: 1,
-				name: 'Juegos',
+				name: 'Juegos PlayStation 3',
 				icon: 'ion-ios-play'
 			},
 			{
 				tid: 2,
+				name: 'Juegos PlayStation 4',
+				icon: 'ion-ios-play'
+			},			
+			{
+				tid: 3,
 				name: 'Consolas',
 				icon: 'ion-ios-game-controller-a'
 			},
 			{
-				tid: 3,
+				tid: 4,
 				name: 'Accesorios',
 				icon: 'ion-ios-game-controller-a'
 			},
 			{
-				tid: 4,
+				tid: 5,
 				name: 'Figuras de acción',
 				icon: 'ion-ios-body'
 			}];
@@ -44,23 +49,23 @@
 			];
 
 			var productos = {
-			'call-of-duty': {
+			'BATTLEFIELD-4': {
 				nid: 1,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: 'mas-vendidos',
 				icon: 'ion-android-star',
 				productMake: '',
-				trailer: '',
-				productUrl: 'call-of-duty',
-				title: 'Call of Duty',
+				trailer: '//www.youtube.com/embed/P9fK77eE7fs',
+				productUrl: 'BATTLEFIELD-4',
+				title: 'BATTLEFIELD 4',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
-				description: ''
+				description: '<p>La famosa saga de acción bélica creada por DICE y EA. El estudio responsable apuesta por reafirmar los pilares de la franquicia, y por seguir ampliándolos con una nueva campaña ambientada en un creíble conflicto con oriente, y por la fuerza de un cooperativo de leyenda. El desarrollo a caballo entre la actual generación y la próxima garantiza un apartado gráfico y tecnológico de infarto.</p><p>Plataforma:PlayStation 3</p><p>También para:PC  Xbox 360  Xbox One  PS4</p><p>Desarrollador:DICE</p><p>Distribuidor:EA</p><p>Género:Acción, Primera persona (FPS) (Bélico)</p><p>Jugadores:1-24 (Competitivo: Sí / Cooperativo: Sí)</p><p>Duración:6-8 horas + Multijugador</p><p>Idioma:Textos: Español, Voces: Español</p><p>Lanzamiento:31 de octubre de 2013 (Pegi: +18)</p>'
 			},
 			'lego-movie-videogame': {
 				nid: 2,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: '',
 				icon: '',
 				productMake: 'Warner Bros. Interactive Entertainment',
@@ -73,7 +78,7 @@
 			'batman': {
 				nid: 3,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: '',
 				icon: '',
 				productMake: '',
@@ -86,7 +91,7 @@
 			'lego-marvel': {
 				nid: 4,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: 'mas-vendidos',
 				icon: 'ion-android-star',
 				productMake: '',
@@ -99,7 +104,7 @@
 			'fifa-14': {
 				nid: 5,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: '',
 				icon: '',
 				productMake: '',
@@ -112,7 +117,7 @@
 			'injustice': {
 				nid: 6,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: 'recomendados',
 				icon: 'ion-android-happy',
 				productMake: '',
@@ -125,7 +130,7 @@
 			'nba-2k15': {
 				nid: 7,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: '',
 				icon: '',
 				productMake: '',
@@ -138,7 +143,7 @@
 			'need-for-speed-rivals': {
 				nid: 8,
 				tid: 1,
-				categoryName: 'Juegos',
+				categoryName: 'Juegos PlayStation 3',
 				class: 'mas-vendidos',
 				icon: 'ion-android-star',
 				productMake: '',
@@ -146,6 +151,136 @@
 				productUrl: 'need-for-speed-rivals',
 				title: 'Need for Speed rivals',
 				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/nfsrivalps4(21_01_2014).jpg',
+				description: ''
+			},
+			'DIABLO-III-Lord-of-terror': {
+				nid: 9,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'DIABLO-III-Lord-of-terror',
+				title: 'DIABLO III Lord of terror',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'SAW-III-Jigsaw-Killer': {
+				nid: 10,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'SAW-III-Jigsaw-Killer',
+				title: 'SAW III Jigsaw Killer',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'GOD-OF-WAR-Hades': {
+				nid: 11,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'GOD-OF-WAR-Hades',
+				title: 'GOD OF WAR Hades',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'The-dream-master-Freddy': {
+				nid: 12,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'The-dream-master-Freddy',
+				title: 'The dream master Freddy',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'World-of-Warcraft': {
+				nid: 13,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'World-of-Warcraft',
+				title: 'World of Warcraft',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'ASSASSINS-CREED-Haytham-Kenway': {
+				nid: 14,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'ASSASSINS-CREED-Haytham-Kenway',
+				title: 'ASSASSIN´S CREED Haytham Kenway',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'METAL-GEAR-SOLID-V-GROUND-ZEROES-Solid-Snake': {
+				nid: 15,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'METAL-GEAR-SOLID-V-GROUND-ZEROES-Solid-Snake',
+				title: 'METAL GEAR SOLID V GROUND ZEROES Solid Snake',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'BREAKING-BAD-Heisenberg': {
+				nid: 16,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'BREAKING-BAD-Heisenberg',
+				title: 'BREAKING BAD Heisenberg',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'PREDATORS': {
+				nid: 17,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'PREDATORS',
+				title: 'PREDATORS',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
+				description: ''
+			},
+			'DRAGON-BALL-Z-Goku-ssj': {
+				nid: 18,
+				tid: 5,
+				categoryName: 'Figuras de acción',
+				class: '',
+				icon: '',
+				productMake: '',
+				trailer: '',
+				productUrl: 'DRAGON-BALL-Z-Goku-ssj',
+				title: 'DRAGON BALL Z Goku ssj',
+				thumb: 'http://www.the-best.com.ar/wp-content/uploads/catablog/thumbnails/xonecodadvance.jpg',
 				description: ''
 			}};
 
