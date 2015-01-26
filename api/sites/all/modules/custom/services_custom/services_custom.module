@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Service resource for getting node related info given a path alias.
+ */
+ /**
+ * Implements of hook_services_resources().
+ */
+function services_custom_services_resources() {
+  return array(
+    'product_node' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'access callback' => '_services_custom_retrieve_access',
+          'help' => 'Returns a node given a path alias.',
+          'callback' => '_services_custom_get_node',
+		  'args' => array(
+			array(
+			  'name' => 'alias',
+			  'optional' => FALSE,
+			  'source' => array('path' => 0),
+			  'type' => 'string',
+			  'description' => 'The path alias of the node to get',
+			),
+		  ),
+        ),
+      ),
+    ),
+  );
+}
+
+function _services_custom_get_node($alias) {
+
+  $system_path = drupal_lookup_path('source', $alias); 
+  $node = menu_get_object('node', 1, $system_path);
+  $ret = array();
+  if ($node) {
+    $ret['title'] = $node->title;
+	$ret['nid'] = $node->nid;
+	$ret['description'] = $node->body[LANGUAGE_NONE][0]['safe_value'];
+	$ret['productMake'] = $node->field_marca_empresa_desarrollado[LANGUAGE_NONE][0]['safe_value'];
+	$ret['trailer'] = $node->field_trailer[LANGUAGE_NONE][0]['safe_value'];
+	$ret['image'] = image_style_url('product_detail_view', $node->field_imagen[LANGUAGE_NONE][0]['uri']);
+	$ret['bestseller'] = $node->field_mas_vendido[LANGUAGE_NONE][0]['value'] == 1 ? 'mas-vendidos' : '';
+	$ret['recommended'] = $node->field_recomendado[LANGUAGE_NONE][0]['value'] == 1 ? 'recomendados' : '';
+	
+    $uri = entity_uri('node', $node);
+    $ret['path'] = url($uri['path']);
+  }
+  
+  return $ret;
+}
+
+/**
+ * Service access.
+ */
+function _services_custom_retrieve_access() {
+  return TRUE;
+}

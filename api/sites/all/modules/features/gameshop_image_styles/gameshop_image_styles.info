@@ -1,0 +1,7 @@
+name = Gameshop Image Styles
+core = 7.x
+package = Features
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = product_detail_view
+features[image][] = product_list_view

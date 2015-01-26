@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Gameshop Content Types feature.
+ */
+
+include_once 'gameshop_content_types.features.inc';

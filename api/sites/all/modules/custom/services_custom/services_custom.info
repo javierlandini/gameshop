@@ -1,0 +1,10 @@
+name = Services Custom
+description = Services additions.
+package = Services
+core = 7.x
+php = 5.x
+
+dependencies[] = services
+version = "7.x-1.00"
+core = "7.x"
+
