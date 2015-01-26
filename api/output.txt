@@ -1,3 +1,0 @@
-
-password: P@ssw0rd 		hash: $S$D8Ugur.8CWV4JJ52bFEYb48zI2cSQHuuWl2i4yBxdyWSxLMC.LVV
-
