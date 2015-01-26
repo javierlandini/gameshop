@@ -2,11 +2,11 @@
 	<div class="container">
 		<category-menu></category-menu>
 		<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
-			<h2 class="title"><span class="icon-size size-28"><i class="icon icon {{category.icon}}"></i></span>{{category.name}}</h2>
+			<h2 class="title"><span class="icon-size size-28"><i class="icon icon {{category.description}}"></i></span>{{category.name}}</h2>
 			<ul id="nuestros-productos" class="product-list list-inline clearfix">
-				<li  ng-repeat="juego in juegos" class="{{juego.class}}"><a ui-sref="productos.productos.categoria.producto({productUrl: '{{juego.productUrl}}'})"><i class="icon {{juego.icon}}"></i><img ng-src="{{juego.thumb}}" /></a>
+				<li  ng-repeat="product in products" class="{{class(product)}}"><a ui-sref="productos.productos.categoria.producto({productUrl: '{{product.path.substring(1)}}'})"><i class="icon {{icon(product)}}"></i><img ng-src="{{product.image_list_view}}" /></a>
 					<div class="item-hover text-center">
-						<a ui-sref="productos.productos.categoria.producto({productUrl: '{{juego.productUrl}}'})" class="btn btn-primary btn-sm">Ver más</a>
+						<a ui-sref="productos.productos.categoria.producto({productUrl: '{{product.path.substring(1)}}'})" class="btn btn-primary btn-sm">Ver más</a>
 					</div>
 				</li>
 			</ul>

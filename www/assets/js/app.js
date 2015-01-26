@@ -1,6 +1,6 @@
 (function() {
 	//ngSanitize needed for using ng-bind-html
-	var app = angular.module('gameshop', ['ngSanitize', 'ui.router', 'uiGmapgoogle-maps', 'gameshopdata']);
+	var app = angular.module('gameshop', ['ngSanitize', 'ui.router', 'uiGmapgoogle-maps', 'config']);
 
 	app.config(function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise("/");
@@ -62,26 +62,114 @@
 		}
 	}]);
 
-	app.controller('IndexController', function($scope, contentdata) {
-		$scope.bestSellers = contentdata.getBestSellers();
-		$scope.recommendations = contentdata.getRecommended();
+	app.controller('IndexController', function($scope, $http, CONFIG) {
+		$http.get(CONFIG.apiBaseUrl + 'views/best_sellers.json', {cache: true})
+		.success(function(data) {
+			$scope.bestSellers = data;
+		});
+
+		$http.get(CONFIG.apiBaseUrl + 'views/recommended.json', {cache: true})
+		.success(function(data) {
+			$scope.recommendations = data;
+		});
 	});
 
-	app.controller('CarouselController', function($scope, contentdata) {
-		$scope.slides = contentdata.getSlides();
+	app.controller('CarouselController', function($scope, $http, CONFIG) {
+		$http.get(CONFIG.apiBaseUrl + 'views/carousel_slides.json', {cache: true})
+		.success(function(data) {
+			$scope.slides = data;
+		});
 	});
 
-	app.controller('ProductosController', function($scope, contentdata) {
-		$scope.juegos = contentdata.getProducts();
+	app.controller('ProductosController', function($scope, $http, CONFIG) {
+
+		$scope.icon = function(aProduct) {
+			if (aProduct.bestseller == 'mas-vendidos') {
+				return 'ion-android-star';
+			}
+			else if (aProduct.recommended == 'recomendados') {
+				return 'ion-android-happy';
+			}
+			else {
+				return '';
+			}
+		};
+
+		$scope.class = function(aProduct) {
+			if (aProduct.bestseller == 'mas-vendidos') {
+				return aProduct.bestseller;
+			}
+			else if (aProduct.recommended == 'recomendados') {
+				return aProduct.recommended;
+			}
+			else {
+				return '';
+			}
+		};
+
+		$http.get(CONFIG.apiBaseUrl + 'views/products_by_category.json?args[0]=all')
+		.success(function(data) {
+			$scope.products = data;
+		});
 	});
 
-	app.controller('ProductosCategoriaController', function($scope, $stateParams, contentdata) {
-		$scope.category = contentdata.getCategory($stateParams.category);
-		$scope.juegos = contentdata.getProductsByCategory($stateParams.category);
+	app.controller('ProductosCategoriaController', function($scope, $stateParams, $http, CONFIG) {
+
+		$scope.icon = function(aProduct) {
+			if (aProduct.bestseller == 'mas-vendidos') {
+				return 'ion-android-star';
+			}
+			else if (aProduct.recommended == 'recomendados') {
+				return 'ion-android-happy';
+			}
+			else {
+				return '';
+			}
+		};
+
+		$scope.class = function(aProduct) {
+			if (aProduct.bestseller == 'mas-vendidos') {
+				return aProduct.bestseller;
+			}
+			else if (aProduct.recommended == 'recomendados') {
+				return aProduct.recommended;
+			}
+			else {
+				return '';
+			}
+		};
+
+		$http.get(CONFIG.apiBaseUrl + 'views/product_category_term.json?args[0]=' + $stateParams.category, {cache: true})
+		.success(function(data) {
+			$scope.category = data[0];
+		});
+
+		$http.get(CONFIG.apiBaseUrl + 'views/products_by_category.json?args[0]=' + $stateParams.category)
+		.success(function(data) {
+			$scope.products = data;
+		});
 	});
 
-	app.controller('ProductosProductoController', function($scope, $stateParams, contentdata) {
-		$scope.producto = contentdata.getProduct($stateParams.productUrl);
+	app.controller('ProductosProductoController', function($scope, $stateParams, $http, CONFIG) {
+
+		$scope.icon = function(aProduct) {
+			if (aProduct) {
+				if (aProduct.bestseller == 'mas-vendidos') {
+					return 'ion-android-star';
+				}
+				else if (aProduct.recommended == 'recomendados') {
+					return 'ion-android-happy';
+				}
+				else {
+					return '';
+				}
+			}
+		};		
+
+		$http.get(CONFIG.apiBaseUrl + 'product_node/' + $stateParams.productUrl + '.json', {cache: true})
+		.success(function(data) {
+			$scope.product = data;
+		});
 	})
 
 	app.controller('ContactFormController', function($scope, $http) {
@@ -126,8 +214,11 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'directive_templates/category-menu.html',
-			controller: function($scope, contentdata){
-				$scope.categories = contentdata.getCategories();
+			controller: function($scope, $http, CONFIG){
+				$http.get(CONFIG.apiBaseUrl + 'taxonomy_term.json?parameters[vid]=2', {cache: true})
+				.success(function(data) {
+					$scope.categories = data;
+				});
 			},
 			controllerAs: 'categoriesCtrl'
 		};
@@ -182,10 +273,18 @@
       }
     ]);
 
-	app.filter('trustAsResourceUrl', ['$sce', function($sce) {
+	app.filter('trustAsHtml', ['$sce', function($sce) {
 		return function(val) {
-			return $sce.trustAsResourceUrl(val);
+			return $sce.trustAsHtml(val);
 		}
 	}]);
+
+	app.filter('lowerNoSpaces', function () {
+	    return function (input) {
+	    	if (input) {
+	        	return input.toLowerCase().replace(/\s/g, '-');
+	      	}
+	    };
+    });
 
 })();

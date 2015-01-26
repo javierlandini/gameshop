@@ -1,2 +1,8 @@
 www/gameshop.sublime-project
 www/gameshop.sublime-workspace
+# Ignore Drupal configuration files that may contain sensitive information.
+api/sites/*/settings*.php
+
+# Ignore Drupal paths that contain user-generated content.
+api/sites/*/files
+api/sites/*/private

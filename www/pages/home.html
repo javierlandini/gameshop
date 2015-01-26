@@ -7,7 +7,7 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div ng-repeat="slide in slides" ng-class="{'item active': $first, 'item': !$first}">
-		  <img ng-src="{{slide.img}}" alt="...">
+		  <a href="{{slide.link}}" ><img ng-src="{{slide.image}}" alt="..."></a>
 		  <div class="carousel-caption">
 			<h2>{{slide.title}}</h2>
 		  </div>
@@ -32,17 +32,17 @@
 		<div ng-controller="IndexController as indexCtrl" class="col-xs-12 col-sm-12 col-md-10 col-lg-10" id="content">
 			<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-star-outline"></i></span>Los más vendidos</h2>
 			<ul id="lo-mas-vendido" class="list-inline clearfix">
-				<li  ng-repeat="bestSeller in bestSellers" class=""><a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.categoryName}}', productUrl: '{{bestSeller.productUrl}}'})"><img ng-src="{{bestSeller.thumb}}" /></a>
+				<li  ng-repeat="bestSeller in bestSellers" class=""><a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.productcategory | lowerNoSpaces}}', productUrl: '{{bestSeller.path.substring(1)}}'})"><img ng-src="{{bestSeller.image}}" /></a>
 					<div class="item-hover text-center">
-						<a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.categoryName}}', productUrl: '{{bestSeller.productUrl}}'})" class="btn btn-primary btn-sm">Ver más</a>
+						<a ui-sref="productos.productos.categoria.producto({category: '{{bestSeller.productcategory | lowerNoSpaces}}', productUrl: '{{bestSeller.path.substring(1)}}'})" class="btn btn-primary btn-sm">Ver más</a>
 					</div>
 				</li>
 			</ul>
 			<h2 class="title"><span class="icon-size size-28"><i class="icon ion-android-happy"></i></span>Recomendados para vos</h2>
 			<ul id="recomendados" class="list-inline clearfix">
-				<li ng-repeat="recommended in recommendations" ><a ui-sref="productos.productos.categoria.producto({category: '{{recommended.categoryName}}', productUrl: '{{recommended.productUrl}}'})"><img ng-src="{{recommended.thumb}}" /></a>
+				<li ng-repeat="recommended in recommendations" ><a ui-sref="productos.productos.categoria.producto({category: '{{recommended.productcategory | lowerNoSpaces}}', productUrl: '{{recommended.path.substring(1)}}'})"><img ng-src="{{recommended.image}}" /></a>
 					<div class="item-hover text-center">
-						<a ui-sref="productos.productos.categoria.producto({category: '{{recommended.categoryName}}', productUrl: '{{recommended.productUrl}}'})" class="btn btn-primary btn-sm">Ver más</a>
+						<a ui-sref="productos.productos.categoria.producto({category: '{{recommended.productcategory | lowerNoSpaces}}', productUrl: '{{recommended.path.substring(1)}}'})" class="btn btn-primary btn-sm">Ver más</a>
 					</div>
 				</li>
 			</ul>
