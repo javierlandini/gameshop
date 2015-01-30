@@ -1,0 +1,9 @@
+name = Gameshop Custom
+description = Gameshop customizations and updates.
+package = Gameshop
+core = 7.x
+php = 5.x
+
+version = "7.x-1.00"
+core = "7.x"
+

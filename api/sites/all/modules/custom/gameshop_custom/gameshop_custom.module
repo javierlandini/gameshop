@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Module to provide customizations specific to Gameshop website and hook updates.
+ */
+ /**
+ * Implements of hook_form_FORM_ID_alter().
+ */
+function gameshop_custom_form_node_form_alter(&$form, $form_state) {
+  global $user;
+  if (!in_array('administrator', $user->roles)) {
+	$form['options']['promote']['#access'] = FALSE;
+	$form['options']['sticky']['#access'] = FALSE;
+  }
+}

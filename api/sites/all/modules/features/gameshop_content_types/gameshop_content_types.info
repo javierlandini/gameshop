@@ -1,6 +1,8 @@
 name = Gameshop Content Types
 core = 7.x
 package = Features
+version = 7.x-1.0
+project = gameshop_content_types
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = image

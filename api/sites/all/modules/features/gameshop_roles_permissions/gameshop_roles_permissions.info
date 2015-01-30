@@ -1,6 +1,8 @@
 name = Gameshop Roles & Permissions
 core = 7.x
 package = Features
+version = 7.x-1.0
+project = gameshop_roles_permissions
 dependencies[] = block
 dependencies[] = contextual
 dependencies[] = dashboard
