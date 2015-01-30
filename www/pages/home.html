@@ -1,4 +1,4 @@
-<div ng-controller="CarouselController as carouselCtrl" id="carousel-example-generic" class="carousel slide gs-carousel clearfix" data-ride="carousel">
+<div ng-controller="CarouselController as carouselCtrl" id="carousel-example-generic" class="carousel gs-carousel clearfix" data-ride="carousel" ng-show="slides.length" ng-class="{'slide': slides.length}">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li ng-repeat="slide in slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{'active': $first}"></li>
