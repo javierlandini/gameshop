@@ -57,7 +57,7 @@
 					   }};
 		$scope.marker = {
 			id : 1,
-			coords : gameshop_coords,
+			coords : { latitude: -32.950539, longitude: -60.644869},
 			options: { title: 'GAMESHOP'}
 		}
 	}]);
