@@ -1,0 +1,9 @@
+#
+# Redirect all to www
+#
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^game-shop.com.ar
+  RewriteRule ^ http://www.game-shop.com.ar%{REQUEST_URI} [L,R=301]
+</IfModule>

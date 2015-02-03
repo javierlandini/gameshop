@@ -9,8 +9,8 @@ $question = $_POST['question'];
 
 if (!empty($email) && !empty($name) && !empty($question) && empty($_POST['honeypot'])) {
 	$from = $email;
-	//$to = 'gameshop-rosario@hotmail.com';
-	$to = 'javierlandini@gmail.com';
+	$to = 'gameshop-rosario@hotmail.com';
+	//$to = 'javierlandini@gmail.com';
 
 	$headers = 'From: gameshop@game-shop.com.ar' . "\r\n" .
     'Reply-To: ' . $from . "\r\n" .
